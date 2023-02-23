@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>catch-game</title>
+</head>
+<body>
+    <div class="screen">
+        <h1>Cach The Insect</h1>
+        <button class="btn" id="start-btn">Play Game</button>
+    </div>
+    <div class="screen">
+        <h2>what is your favorite insect?</h2>
+        <ul class="insects-list">
+            <li>
+                <button class="choose-insect-btn">
+                    <p>fly</p>
+                    <img src="./imgs/fly.jpg" alt="">
+                </button>
+            </li>
+            <li>
+                <button class="choose-insect-btn">
+                    <p>masquito</p>
+                    <img src="./imgs/masquito.jpg" alt="">
+                </button>
+            </li>
+            <li>
+                <button class="choose-insect-btn">
+                    <p>spider</p>
+                    <img src="./imgs/spider.jpg" alt="">
+                </button>
+            </li>
+            <li>
+                <button class="choose-insect-btn">
+                    <p>butterfly</p>
+                    <img src="./imgs/butterfly.jpg" alt="">
+                </button>
+            </li>
+        </ul>
+    </div>
+
+    <div class="screen game-container">
+        <h3 id="time" class="time">Time: 00:00</h3>
+        <h3 id="score" class="score">score: 0</h3>
+        <h4 id="message" class="message">you are playing impossible game</h4>
+        <!-- <div class="insect ">
+            <img src="./imgs/fly.jpg" alt="">
+        </div> -->
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>
