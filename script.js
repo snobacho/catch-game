@@ -1,13 +1,22 @@
 const screens = document.querySelectorAll('.screen');
 const choose_insect_btns = document.querySelectorAll('.choose-insect-btn');
-const start_btn = document.getElementById('start-btn')
-const game_container = document.getElementById('game-container')
+const start_btn = document.querySelector('.start-btn')
+const game_container = document.querySelector('.game-container')
 const insect_imgs = document.querySelectorAll('.insect-img')
 const timeEl = document.querySelector('.time')
 const scoreEl = document.querySelector('.score')
 const message = document.querySelector('.message')
 const modal_btns = document.querySelector('.modal-buttons')
 const exit_game = document.querySelector('.exit-game')
+
+document.addEventListener("contextmenu", function(event){    // right click disable 
+    event.preventDefault();
+}, false);
+
+document.querySelector(".new-game").addEventListener("click", function(){   // reload page for new game 
+    window.location.reload();
+});
+
 let seconds = 10
 let score = 0
 let selected_insect = {}
@@ -25,13 +34,13 @@ choose_insect_btns.forEach(btn => {
         startGame()
     })
 })
-insect_imgs.addEventListener("mouseleave", function() { 
+
+insect_imgs.addEventListener("mouseleave", () => {  // ! BUG insect img not a function
     insect_imgs.style.transform = "rotate(-360deg)"
   });
 
 function startGame() {
     setInterval(decrimentTime, 1000)
-    seconds = 10
 }
 
 function decrimentTime() {
@@ -40,7 +49,7 @@ function decrimentTime() {
     m = m < 10 ? `0${m}` : m
     s = s < 10 ? `0${s}` : s
     timeEl.innerHTML = `Time: ${m}:${s}`
-    if (seconds == 0) {
+    if (seconds < 1) {
         message.classList.add('visible')
         message.textContent = `YOUR SCORE IS: ${score}`
         clearInterval(timer)
@@ -55,11 +64,14 @@ function createInsect() {
     const { x, y } = getRandomLocation()
     insect.style.top = `${y}px`
     insect.style.left = `${x}px`
-    insect.innerHTML = `<img src="${selected_insect.src}" alt="${selected_insect.alt}" style="transform: rotate(${Math.random() * 360}deg)" />`
+    insect.innerHTML = `
+        <img src="${selected_insect.src}" 
+        alt="${selected_insect.alt}" 
+        style="transform: rotate(${Math.random() * 360}deg)" /> `
 
     insect.addEventListener('click', catchInsect)
-    if (seconds == 0){
-        insect.style.display ="none"
+    if (seconds < 1){
+        insect.innerHTML = ""
         modal_btns.style.display = "block"
     }
     game_container.appendChild(insect)
@@ -93,4 +105,3 @@ function increaseScore() {
     }
     scoreEl.innerHTML = `score: ${score}`
 }
-
