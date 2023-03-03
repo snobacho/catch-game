@@ -10,45 +10,45 @@
 <body>
     <div class="screen">
         <h1>Cach The Insect</h1>
-        <button class="btn" id="start-btn">Play Game</button>
+        <button class="start-btn button" id="start-btn">Play Game</button>
     </div>
     <div class="screen">
-        <h2>what is your favorite insect?</h2>
+        <h2 class="favorite-insect-heading">What is your favorite insect?</h2>
         <ul class="insects-list">
             <li>
                 <button class="choose-insect-btn">
-                    <p>fly</p>
-                    <img src="./imgs/fly.jpg" alt="">
+                    <p>masquito</p>
+                    <img class="insect-img" src="./imgs/insect3.png" alt="insect">
                 </button>
             </li>
             <li>
                 <button class="choose-insect-btn">
-                    <p>masquito</p>
-                    <img src="./imgs/masquito.jpg" alt="">
+                    <p>locust</p>
+                    <img class="insect-img" src="./imgs/insect2.png" alt="locust">
                 </button>
             </li>
             <li>
                 <button class="choose-insect-btn">
                     <p>spider</p>
-                    <img src="./imgs/spider.jpg" alt="">
+                    <img class="insect-img" src="./imgs/insect4.png" alt="insect">
                 </button>
             </li>
             <li>
                 <button class="choose-insect-btn">
-                    <p>butterfly</p>
-                    <img src="./imgs/butterfly.jpg" alt="">
+                    <p>fly</p>
+                    <img class="insect-img" src="./imgs/fly.jpj" alt="butterfly">
                 </button>
             </li>
         </ul>
     </div>
-
     <div class="screen game-container" id="game-container">
-        <h3 id="time" class="time">Time: 00:00</h3>
-        <h3 id="score" class="score">score: 0</h3>
-        <h4 id="message" class="message">you are playing impossible game</h4>
-        <!-- <div class="insect ">
-            <img src="./imgs/fly.jpg" alt="">
-        </div> -->
+        <h3 class="time">Time: 00:10</h3>
+        <h3 class="score">score: 0</h3>
+        <h4 class="message"></h4>
+        <div class="modal-buttons">
+            <button class="new-game button">New Game</button>
+            <button class="exit-game button" onclick="window.close()">Exit Game</button>
+        </div>
     </div>
 
     <script src="./script.js"></script>
