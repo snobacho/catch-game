@@ -1,6 +1,9 @@
 *{
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
     user-select: none;
+    list-style: none;
 }
 html {
     font-size: 90%; 
@@ -9,7 +12,7 @@ body {
     background-color: var(--secondary-color);
     height: 100vh;
     margin: 0;
-    width: 100%;
+    min-width: 100%;
     overflow: hidden;
     text-align: center;
     color: aliceblue;
@@ -53,16 +56,16 @@ body {
     display: none;
 }
 .favorite-insect-heading {
-    color: white;
-    font-size: 2rem;
+    font-size: 1.8rem;
 }
 .insects-list {
-    display: flex;
-    list-style: none;
+    display: flex; 
+    flex-wrap: wrap-reverse;
     border: none;
 }
 .insects-list li{
     margin: 1rem;
+    flex: 1 1 25%;
 }
 .choose-insect-btn {
     background-color: var(--white-color);
@@ -72,7 +75,7 @@ body {
     cursor: pointer;
     width: 150px;
     height: 150px;
-    font-size: 15px;
+    font-size: .9rem;
     font-weight: 999;
     letter-spacing: 0.2rem;
     text-transform: uppercase;
@@ -120,11 +123,10 @@ body {
     color: rgb(255, 255, 255);
     background-color: black;
     line-height: 4rem;
-    z-index: 111;
+    z-index: 11;
     text-align: center;
     font-size: 2rem;
     color: var(--white-color);
-    opacity: 0;
     position: absolute;
     top: 0;
     left: 50%;
@@ -156,3 +158,21 @@ body {
     width: 100px;
     height: 100px;  
 }
+@media only screen and (max-width: 768px) {
+    .insect img {
+        width: 70px;
+        height: 70px;  
+    }
+    .choose-insect-btn {
+        width: 100px;
+        height: 100px;
+    }
+    .choose-insect-btn img {
+        width: 60px;
+        height: 60px;
+    }
+    .insects-list li{
+        margin: .5rem;
+    }
+  }
+

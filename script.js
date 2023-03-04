@@ -9,9 +9,6 @@ const message = document.querySelector('.message')
 const modal_btns = document.querySelector('.modal-buttons')
 const exit_game = document.querySelector('.exit-game')
 
-document.addEventListener("contextmenu", function(event){    // right click disable 
-    event.preventDefault();
-}, false);
 
 document.querySelector(".new-game").addEventListener("click", function(){   // reload page for new game 
     window.location.reload();
@@ -105,3 +102,8 @@ function increaseScore() {
     }
     scoreEl.innerHTML = `score: ${score}`
 }
+
+
+document.addEventListener("contextmenu", function(event){    // right click disable 
+    event.preventDefault();
+}, false);
